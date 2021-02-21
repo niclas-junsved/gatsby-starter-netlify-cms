@@ -12,7 +12,19 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
+  - name: "whatWeDo"
+    label: "Vad vi gör"
+    folder: "src/pages/whatwedo"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "whatwedo-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Publish Date", name: "relation", widget: "relation"}
+    
+   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
     create: true
